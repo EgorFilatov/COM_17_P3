@@ -1,0 +1,4 @@
+../Drivers/CMSIS/Include/core_cm0.h:623:22:__NVIC_EnableIRQ	16	static
+../Core/Src/usart.c:4:6:uart1Init	24	static
+../Core/Src/usart.c:54:6:uart1TxDma	16	static
+../Core/Src/usart.c:60:6:uart1RxDma	16	static

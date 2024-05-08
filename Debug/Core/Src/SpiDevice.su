@@ -1,0 +1,24 @@
+../Core/Src/SpiDevice.cpp:9:1:SpiDevice::SpiDevice()	16	static
+../Core/Src/SpiDevice.cpp:18:6:void SpiDevice::setCS(GPIO_TypeDef*, uint8_t)	24	static
+../Core/Src/SpiDevice.cpp:23:10:uint8_t* SpiDevice::getTxBuffPtr(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:30:10:uint8_t* SpiDevice::getRxBuffPtr(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:37:6:void SpiDevice::select()	16	static
+../Core/Src/SpiDevice.cpp:41:6:void SpiDevice::deselect()	16	static
+../Core/Src/SpiDevice.cpp:45:9:uint8_t SpiDevice::verifyRxChecksum(uint8_t)	24	static
+../Core/Src/SpiDevice.cpp:53:9:uint8_t SpiDevice::isChanged(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:70:9:static uint8_t SpiDevice::getCurrentDeviceIndex()	8	static
+../Core/Src/SpiDevice.cpp:73:6:static void SpiDevice::setCurrentDeviceIndex(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:76:6:static void SpiDevice::increaseCurrentDeviceIndex()	8	static
+../Core/Src/SpiDevice.cpp:79:6:static void SpiDevice::decreaseCurrentDeviceIndex()	8	static
+../Core/Src/SpiDevice.cpp:83:9:static uint8_t SpiDevice::getCurrentBuffIndex()	8	static
+../Core/Src/SpiDevice.cpp:87:6:static void SpiDevice::setCurrentBuffIndex(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:90:6:static void SpiDevice::toggleCurrentBuffIndex()	8	static
+../Core/Src/SpiDevice.cpp:94:6:static void SpiDevice::setRxBuffState(uint8_t, State)	16	static
+../Core/Src/SpiDevice.cpp:97:7:static State SpiDevice::getRxBuffState(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:101:6:static void SpiDevice::setTxBuffState(uint8_t, State)	16	static
+../Core/Src/SpiDevice.cpp:104:7:static State SpiDevice::getTxBuffState(uint8_t)	16	static
+../Core/Src/SpiDevice.cpp:108:9:static uint8_t SpiDevice::getDevicesNumber()	8	static
+../Core/Src/SpiDevice.cpp:112:13:DeviceState SpiDevice::getState()	16	static
+../Core/Src/SpiDevice.cpp:116:6:void SpiDevice::setState(DeviceState)	16	static
+../Core/Src/SpiDevice.cpp:120:12:DeviceType SpiDevice::getType()	16	static
+../Core/Src/SpiDevice.cpp:123:6:void SpiDevice::setType(DeviceType)	16	static
