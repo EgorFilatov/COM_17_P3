@@ -24,14 +24,14 @@ uint8_t* SpiDevice::getTxBuffPtr(uint8_t buffIndex) {
 	if (buffIndex == 0) {
 		return txBuff;
 	}
-	return &txBuff[6];
+	return &txBuff[8];
 }
 
 uint8_t* SpiDevice::getRxBuffPtr(uint8_t buffIndex) {
 	if (buffIndex == 0) {
 		return rxBuff;
 	}
-	return &rxBuff[6];
+	return &rxBuff[8];
 }
 
 void SpiDevice::select() {
@@ -44,26 +44,24 @@ void SpiDevice::deselect() {
 
 uint8_t SpiDevice::verifyRxChecksum(uint8_t buffIndex) {
 	uint32_t sum { 0 };
-	for (uint8_t i = buffIndex * 6 + 2; i <= buffIndex * 6 + 8; ++i) {
+	for (uint8_t i = buffIndex * 8 + 2; i <= buffIndex * 8 + 7; ++i) {
 		sum += rxBuff[i];
 	}
-	return (sum == rxBuff[buffIndex * 6 + 2]) ? 1 : 0;
+	return (sum == rxBuff[buffIndex * 8 + 1]) ? 1 : 0;
 }
 
 uint8_t SpiDevice::isChanged(uint8_t buffIndex) {
-	/*
-	if (this->rxPrev[0] != this->ts[0] || this->rxPrev[1] != this->ts[1] ||
-		this->rxPrev[2] != this->ts[2] || this->rxPrev[3] != this->ts[3] || this->rxPrev[4] != this->ts[4]) {
-
-		this->rxPrev[0] = this->ts[0];
-		this->rxPrev[1] = this->ts[1];
-		this->rxPrev[2] = this->ts[2];
-		this->rxPrev[3] = this->ts[3];
-		this->rxPrev[4] = this->ts[4];
-		return 1;
+	uint8_t buffStart = buffIndex * 8;
+	uint8_t buffEnd = start + 7;
+	for (uint8_t i = buffStart; i < buffEnd; ++i) {
+		if (rxBuff[i] != previousRxBuff[i]) {
+			for (uint8_t i = buffStart; i < buffEnd; ++i) {
+				previousRxBuff[i] = rxBuff[i];
+			}
+			return 1;
+		}
 	}
 	return 0;
-	*/
 }
 
 

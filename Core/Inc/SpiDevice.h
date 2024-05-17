@@ -38,8 +38,8 @@ private:
 	 3:		Номер порта
 	 4:		Тип платы
 	 5-...:	Данные */
-	uint8_t rxBuff[9] { 0 };
-	uint8_t previousRxBuff[9] { 0 };
+	uint8_t rxBuff[16] { 0 };
+	uint8_t previousRxBuff[16] { 0 };
 
 	/* Буфер для передачи:
 	 0:		Размер
@@ -48,8 +48,8 @@ private:
 	 3:		Номер порта
 	 4:		Тип платы
 	 5-...:	Данные */
-	uint8_t txBuff[9] { 0 };
-	uint8_t previousTxBuff[9] { 0 };
+	uint8_t txBuff[16] { 0 };
+	uint8_t previousTxBuff[16] { 0 };
 
 	uint8_t index;
 	DeviceState state;
